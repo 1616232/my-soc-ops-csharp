@@ -4,7 +4,7 @@
 
 Social Bingo game for in-person mixers. Find people who match the questions and get 5 in a row!
 
-🎮 **[Play the Game](https://dotnet-presentations.github.io/vscode-github-copilot-agent-lab/)** • 📚 **[View Lab Guide](https://dotnet-presentations.github.io/vscode-github-copilot-agent-lab/docs/)**
+🎮 **[Play the Game (original version, not from this repo)](https://dotnet-presentations.github.io/vscode-github-copilot-agent-lab/)** • 📚 **[View Lab Guide](https://dotnet-presentations.github.io/vscode-github-copilot-agent-lab/docs/)**
 
 ---
 
