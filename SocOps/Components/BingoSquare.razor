@@ -6,10 +6,10 @@
     class="@GetCssClasses()"
     aria-pressed="@Square.IsMarked"
     aria-label="@(Square.IsFreeSpace ? "Free space" : Square.Text)">
-    <span class="wrap-break-word hyphens-auto">@Square.Text</span>
+    <span class="wrap-break-word hyphens-auto font-semibold">@Square.Text</span>
     @if (Square.IsMarked && !Square.IsFreeSpace)
     {
-        <span class="absolute top-0.5 right-0.5 text-green-600 text-xs">✓</span>
+        <span class="absolute top-0.5 right-0.5 text-mb-platinum text-lg font-bold" style="text-shadow: 0 0 8px rgba(184, 163, 103, 0.6);">★</span>
     }
 </button>
 
@@ -25,15 +25,15 @@
 
     private string GetCssClasses()
     {
-        var baseClasses = "relative flex items-center justify-center p-1 text-center border border-gray-300 rounded transition-all duration-150 select-none min-h-[60px] text-xs leading-tight";
+        var baseClasses = "relative flex items-center justify-center p-2 text-center transition-all duration-300 select-none min-h-[70px] text-xs leading-tight rounded-lg hexagonal-pattern metallic-border";
 
         var stateClasses = Square.IsMarked
             ? IsWinning
-                ? "bg-amber-200 border-amber-400 text-amber-900"
-                : "bg-marked border-marked-border text-green-800"
-            : "bg-white text-gray-700 active:bg-gray-100";
+                ? "bg-mb-light-gray text-mb-charcoal platinum-glow animate-mark-glow"
+                : "bg-gradient-to-br from-mb-dark-gray to-mb-charcoal text-mb-platinum animate-mark-glow"
+            : "bg-mb-dark-gray text-mb-silver hover:from-mb-dark-gray hover:to-mb-charcoal hover:text-mb-platinum active:scale-95";
 
-        var freeSpaceClasses = Square.IsFreeSpace ? "font-bold text-sm" : "";
+        var freeSpaceClasses = Square.IsFreeSpace ? "font-bold text-sm text-mb-platinum" : "";
 
         return $"{baseClasses} {stateClasses} {freeSpaceClasses}";
     }

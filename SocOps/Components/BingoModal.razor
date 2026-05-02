@@ -1,13 +1,17 @@
-<div class="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-    <div class="bg-white rounded-xl p-6 max-w-xs w-full text-center shadow-xl animate-[bounce_0.5s_ease-out]">
-        <div class="text-5xl mb-4">🎉</div>
-        <h2 class="text-3xl font-bold text-amber-500 mb-2">BINGO!</h2>
-        <p class="text-gray-600 mb-6">You completed a line!</p>
+<div class="fixed inset-0 bg-black/85 flex items-center justify-center p-4 z-50 backdrop-blur-sm">
+    <div class="bg-gradient-to-br from-mb-dark-gray to-mb-charcoal rounded-2xl p-8 max-w-sm w-full text-center shadow-2xl animate-bingo-reveal metallic-border" style="border: 2px solid var(--mb-platinum);">
+        <!-- Star Animation -->
+        <div class="text-7xl mb-4 animate-star-pulse" style="animation: starPulse 1.5s ease-in-out;">★</div>
+        
+        <!-- Celebration Text -->
+        <h2 class="text-4xl font-bold text-mb-platinum mb-2 animate-page-reveal stagger-1" style="font-family: 'Playfair Display', serif;">BINGO!</h2>
+        <p class="text-mb-silver mb-2 animate-page-reveal stagger-2" style="font-style: italic;">Mercedes-Benz Excellence Achieved</p>
+        <p class="text-mb-silver text-sm mb-8 opacity-80 animate-page-reveal stagger-3">You have completed a perfect line. Engineered precision at its finest.</p>
 
         <button
             @onclick="OnDismiss"
-            class="w-full bg-accent text-white font-semibold py-3 px-6 rounded-lg active:bg-accent-light transition-colors">
-            Keep Playing
+            class="w-full bg-mb-platinum text-mb-charcoal font-bold py-3 px-6 rounded-lg metallic-border transition-all duration-300 hover:scale-105 active:scale-95 hover:shadow-lg">
+            Continue ⟶
         </button>
     </div>
 </div>

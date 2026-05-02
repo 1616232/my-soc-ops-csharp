@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Courier+Prime:wght@400;700&display=swap');
+
+/* Mercedes-Benz Luxury Color Palette */
+:root {
+    --mb-charcoal: #1a1a1a;
+    --mb-silver: #e8e8e8;
+    --mb-platinum: #b8a367;
+    --mb-dark-gray: #2d2d2d;
+    --mb-light-gray: #f5f5f5;
+}
+
 html,
 body,
 #app {
@@ -6,7 +17,9 @@ body,
 }
 
 body {
-    font-family: system-ui, -apple-system, sans-serif;
+    font-family: 'Courier Prime', monospace;
+    background-color: var(--mb-charcoal);
+    color: var(--mb-silver);
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -53,13 +66,18 @@ body {
 .bg-white { background-color: #ffffff; }
 .bg-gray-50 { background-color: #f9fafb; }
 .bg-gray-100 { background-color: #f3f4f6; }
+.bg-mb-charcoal { background-color: var(--mb-charcoal); }
+.bg-mb-dark-gray { background-color: var(--mb-dark-gray); }
+.bg-mb-light-gray { background-color: var(--mb-light-gray); }
 .bg-amber-100 { background-color: #fef3c7; }
 .bg-amber-200 { background-color: #fde68a; }
-.bg-accent { background-color: #2563eb; }
-.bg-marked { background-color: #dcfce7; }
-.bg-black\/50 { background-color: rgba(0, 0, 0, 0.5); }
+.bg-accent { background-color: var(--mb-platinum); }
+.bg-marked { background-color: rgba(184, 163, 103, 0.2); }
+.bg-black/50 { background-color: rgba(0, 0, 0, 0.85); }
 
 .text-white { color: #ffffff; }
+.text-mb-silver { color: var(--mb-silver); }
+.text-mb-platinum { color: var(--mb-platinum); }
 .text-gray-500 { color: #6b7280; }
 .text-gray-600 { color: #4b5563; }
 .text-gray-700 { color: #374151; }
@@ -67,7 +85,7 @@ body {
 .text-gray-900 { color: #111827; }
 .text-green-600 { color: #16a34a; }
 .text-green-800 { color: #166534; }
-.text-amber-500 { color: #f59e0b; }
+.text-amber-500 { color: var(--mb-platinum); }
 .text-amber-800 { color: #92400e; }
 .text-amber-900 { color: #78350f; }
 
@@ -113,9 +131,16 @@ body {
 
 .select-none { user-select: none; }
 
-.transition-all { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
-.transition-colors { transition-property: color, background-color, border-color; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+.transition-all { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 300ms; }
+.transition-colors { transition-property: color, background-color, border-color; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 300ms; }
 .duration-150 { transition-duration: 150ms; }
+.duration-300 { transition-duration: 300ms; }
+
+/* Mercedes Metallic & Luxury Effects */
+.metallic-border { border: 2px solid var(--mb-platinum); box-shadow: inset 0 1px 0 rgba(232, 232, 232, 0.2), 0 0 15px rgba(184, 163, 103, 0.3); }
+.hexagonal-pattern { background-image: repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(184, 163, 103, 0.03) 2px, rgba(184, 163, 103, 0.03) 4px); }
+.platinum-glow { box-shadow: 0 0 20px rgba(184, 163, 103, 0.6), inset 0 0 10px rgba(184, 163, 103, 0.2); }
+.luxury-header { background: linear-gradient(180deg, var(--mb-dark-gray) 0%, var(--mb-charcoal) 100%); border-bottom: 1px solid var(--mb-platinum); }
 
 button:active .active\:bg-gray-100 { background-color: #f3f4f6; }
 button:active .active\:bg-accent-light { background-color: #3b82f6; }
@@ -146,6 +171,40 @@ button:disabled {
 .min-h-\[60px\] {
     min-height: 60px;
 }
+
+/* Mercedes-Benz Cinematic Animations */
+@keyframes pageLoadReveal {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes squareMarkGlow {
+    0% { box-shadow: 0 0 0 0 rgba(184, 163, 103, 0.4); transform: scale(1); }
+    50% { box-shadow: 0 0 15px 5px rgba(184, 163, 103, 0.2); transform: scale(1.05); }
+    100% { box-shadow: 0 0 0 0 rgba(184, 163, 103, 0); transform: scale(1); }
+}
+
+@keyframes starPulse {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.05); }
+}
+
+@keyframes bingoReveal {
+    0% { opacity: 0; transform: scale(0.5) rotate(-10deg); }
+    100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+@keyframes textFadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-page-reveal { animation: pageLoadReveal 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; }
+.animate-mark-glow { animation: squareMarkGlow 0.6s ease-out; }
+.animate-star-pulse { animation: starPulse 3s ease-in-out infinite; }
+.animate-bingo-reveal { animation: bingoReveal 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
 
 @keyframes bounce {
     0%, 100% {
